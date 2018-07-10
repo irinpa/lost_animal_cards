@@ -1,0 +1,26 @@
+#PUT http://localhost:8090/people/1
+#Content-Type: application/json
+#
+#{"firstName" : "Bilbo",  "lastName" : "Baggins"}
+
+
+
+#POST http://localhost:8090/people
+#Content-Type: application/json
+#{"firstName" : "Fedor",  "lastName" : "Dostoevskiy"}
+
+
+#http://localhost:8090/people/search
+
+#http://localhost:8090/people/search/findByLastName?name=Lucas
+
+http://localhost:8090/people/1
+
+#GET http://localhost:8090/people/1
+
+
+Accept: */*
+Cache-Control: no-cache
+
+###
+
