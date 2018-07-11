@@ -5,16 +5,17 @@
 
 
 
-#POST http://localhost:8090/people
-#Content-Type: application/json
-#{"firstName" : "Fedor",  "lastName" : "Dostoevskiy"}
+POST http://localhost:8090/people
+Content-Type: application/json
 
+{"firstName" : "Fedor",  "lastName" : "Dostoevskiy"}
 
-#http://localhost:8090/people/search
+#
+#GET http://localhost:8090/people/search/a
 
 #http://localhost:8090/people/search/findByLastName?name=Lucas
 
-http://localhost:8090/people/1
+#http://localhost:8090/people
 
 #GET http://localhost:8090/people/1
 
