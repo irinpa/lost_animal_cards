@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.util.List;
 
 @Getter
@@ -25,11 +26,14 @@ public class Person {
     @Column(name = "phone")
     private String phone;
 
+    @Email
     @Column(unique = true, name = "email")
     private String email;
 
-    @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "person_id")
-    private List<Animal> animals;
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JoinColumn(name = "person_id")
+//    private List<Animal> animals;
+    @Embedded
+    @JoinColumn(name = "person_id")
+    private List<Animal>  animal;
 }

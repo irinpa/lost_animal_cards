@@ -12,16 +12,19 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import javax.persistence.Embeddable;
+
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
-@Entity
+@Embeddable
+//@Entity
 public class Animal {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private long id;
 
     @NotNull
     @Size(max = 30)
@@ -32,6 +35,7 @@ public class Animal {
     @Column(name = "age")
     private int age;
 
+    @Enumerated(EnumType.ORDINAL)
     @Column(name = "gender")
     private Gender gender;
 
@@ -45,8 +49,8 @@ public class Animal {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Breed breed;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "person_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Person person;
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    @JoinColumn(name = "person_id", nullable = false)
+//    @OnDelete(action = OnDeleteAction.CASCADE)
+//    private Person person;
 }
