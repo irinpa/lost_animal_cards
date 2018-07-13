@@ -35,5 +35,5 @@ public class Person {
 //    private List<Animal> animals;
     @Embedded
     @JoinColumn(name = "person_id")
-    private List<Animal>  animal;
+    private List<Animal>  animals;
 }

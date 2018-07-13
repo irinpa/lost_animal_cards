@@ -9,7 +9,7 @@ import javax.persistence.Embeddable;
 @Setter
 @Embeddable
 public class Address {
-    private long latitude;
-    private long longitude;
+    private Long latitude;
+    private Long longitude;
     private String address;
 }

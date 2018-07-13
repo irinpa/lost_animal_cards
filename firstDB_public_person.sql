@@ -1,0 +1,1 @@
+INSERT INTO public.person (id, email, name, phone) VALUES (1, 'test@test.com', 'Павел', null);

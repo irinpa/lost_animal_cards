@@ -5,10 +5,11 @@
 
 
 
-POST http://localhost:8090/breeds/3/species/1
-Content-Type: application/json
-
-{"name" : "сиба ину"}
+#POST http://localhost:8090/breeds/3/species/1
+#
+#Content-Type: application/json
+#
+#{"name" : "сиба ину"}
 
 #
 #GET http://localhost:8090/people/search/a
@@ -17,20 +18,53 @@ Content-Type: application/json
 
 #http://localhost:8090/people
 
-#GET http://localhost:8090/people/1
-
-
+GET http://localhost:8090/people/1
 Accept: */*
 Cache-Control: no-cache
 
 ###
 
-GET http://localhost:8090/cards/1
-
-###
-
-
 GET http://localhost:8090/species/1/breeds
 
 ###
+POST http://localhost:8090/cards
+Content-Type: application/json
 
+{
+  "description": "описание животного 2",
+  "picture": null,
+  "animal": {
+    "alias": "Мурзик 2",
+    "age": 5,
+    "gender": 1,
+    "color": "Бурый 2",
+    "breed": "http://localhost:8090/breeds/2"
+  },
+  "address": {
+    "latitude": 1,
+    "longitude": 1,
+    "address": "somewhere 2"
+  },
+  "person": "http://localhost:8090/people/1"
+}
+
+###
+
+GET http://localhost:8090/cards/1/person
+
+###
+
+GET http://localhost:8090/cards/1/comments/27
+
+###
+
+POST http://localhost:8090/comments
+Content-Type: application/json
+
+{
+   "text": "fourth comment",
+   "card": "http://localhost:8090/cards/1",
+   "person": "http://localhost:8090/people/1"
+}
+
+###

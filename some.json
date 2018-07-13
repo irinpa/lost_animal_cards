@@ -1,0 +1,31 @@
+{
+  "description": "описание животного",
+  "picture": null,
+  "animal": {
+    "alias": "Мурзик",
+    "age": 5,
+    "gender": null,
+    "color": "Бурый",
+    "_links": {
+      "breed": {
+        "href": "http://localhost:8090/breeds/2"
+      }
+    }
+  },
+  "address": {
+    "latitude": 1,
+    "longitude": 2,
+    "address": "somewhere"
+  },
+  "_links": {
+    "self": {
+      "href": "http://localhost:8090/cards/1"
+    },
+    "card": {
+      "href": "http://localhost:8090/cards/1"
+    },
+    "person": {
+      "href": "http://localhost:8090/cards/1/person"
+    }
+  }
+}
