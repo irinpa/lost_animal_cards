@@ -1,3 +1,4 @@
+/*
 package irina.controllers;
 
 import irina.services.HelloService;
@@ -36,3 +37,4 @@ public class HelloController {
         return "hello " + name;
     }
 }
+*/

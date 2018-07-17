@@ -68,3 +68,17 @@ Content-Type: application/json
 }
 
 ###
+
+POST http://localhost:8090/breeds
+Content-Type: application/json
+
+{
+  "name": "test",
+  "species": "http://localhost:8090/species/1"
+}
+
+###
+
+GET http://localhost:8090/breeds/14
+
+###

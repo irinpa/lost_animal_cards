@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
 
@@ -23,6 +24,8 @@ public class Breed {
     @Column(name = "name")
     private String name;
 
+
+    @RestResource(path = "species", rel="species")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "species_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
