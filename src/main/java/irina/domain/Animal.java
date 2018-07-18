@@ -35,9 +35,10 @@ public class Animal {
     @Column(name = "age")
     private int age;
 
-    @Enumerated(EnumType.ORDINAL)
+//    @Enumerated(EnumType.ORDINAL)
+    @NotNull
     @Column(name = "gender")
-    private Gender gender;
+    private String gender;
 
     @NotNull
     @Size(max = 50)

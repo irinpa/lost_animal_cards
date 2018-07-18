@@ -1,4 +1,4 @@
-INSERT INTO public.breed (id, name, species_id) VALUES (1, 'Выберите породу', 1);
+
 INSERT INTO public.breed (id, name, species_id) VALUES (2, 'Порода не известна', 1);
 INSERT INTO public.breed (id, name, species_id) VALUES (3, 'Австралийская овчарка', 1);
 INSERT INTO public.breed (id, name, species_id) VALUES (4, 'Акита-ину', 1);
@@ -23,6 +23,10 @@ INSERT INTO public.breed (id, name, species_id) VALUES (22, 'Бордер-кол
 INSERT INTO public.breed (id, name, species_id) VALUES (23, 'Бультерьер', 1);
 INSERT INTO public.breed (id, name, species_id) VALUES (24, 'Вельш-корги', 1);
 INSERT INTO public.breed (id, name, species_id) VALUES (25, 'Вельш-терьер', 1);
+INSERT INTO public.breed (id, name, species_id) VALUES (26, 'Сиамская', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (27, 'Британская вислоухая', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (28, 'Сфинкс', 2);
+
 
 DELETE FROM public.breed;
 

@@ -44,8 +44,11 @@ Content-Type: application/json
     "latitude": 1,
     "longitude": 1,
     "address": "somewhere 2"
-  },
-  "person": "http://localhost:8090/people/1"
+      },
+  "person": "http://localhost:8090/people/1",
+  "createdAt": "2012-04-23T18:25:43.511Z",
+  "updatedAt": "2012-04-23T18:25:43.511Z"
+
 }
 
 ###

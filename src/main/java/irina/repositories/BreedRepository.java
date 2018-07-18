@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
-@RepositoryRestResource(collectionResourceRel = "breeds", path = "breeds")
+@CrossOrigin(origins = "http://localhost:3001")
+//@RepositoryRestResource(collectionResourceRel = "breeds", path = "breeds")
 //public interface PersonRepository extends PagingAndSortingRepository<Person, Long> {
 //    List<Person> findByLastName(@Param("name") String name);
 public interface BreedRepository extends JpaRepository<Breed, Long> {

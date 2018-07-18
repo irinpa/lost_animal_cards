@@ -1,3 +1,4 @@
+/*
 package irina.domain;
 
 public enum Gender {
@@ -5,3 +6,4 @@ public enum Gender {
     MALE,
     FEMALE
 }
+*/
