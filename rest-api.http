@@ -82,6 +82,10 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8090/breeds/14
+GET http://localhost:8090/cards
+
+###
+
+GET http://localhost:8090/people/2
 
 ###

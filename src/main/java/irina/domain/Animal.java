@@ -45,7 +45,7 @@ public class Animal {
     @Column(name = "color")
     private String color;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "breed_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Breed breed;

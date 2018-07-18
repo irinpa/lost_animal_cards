@@ -1,5 +1,7 @@
 package irina.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -47,14 +49,16 @@ public class Card {
 //    @OnDelete(action = OnDeleteAction.CASCADE)
 //    private Animal animal;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "person_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonManagedReference
     private Person person;
 
     @RestResource(path = "comments", rel="comments")
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "card_id")
+    @JsonBackReference
     private List<Comment> comments;
 
     @Embedded
