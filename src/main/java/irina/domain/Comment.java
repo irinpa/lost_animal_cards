@@ -1,5 +1,6 @@
 package irina.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -28,12 +29,12 @@ public class Comment {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "card_id", nullable = false)
-    @JsonManagedReference
+    @JsonBackReference
     private Card card;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "person_id", nullable = false)
-    @JsonManagedReference
+    @JsonBackReference("person")
     private Person person;
 
 

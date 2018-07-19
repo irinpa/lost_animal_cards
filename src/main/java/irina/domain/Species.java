@@ -29,6 +29,7 @@ public class Species {
     @RestResource(path = "breeds", rel="breeds")
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "species_id")
+//    @JsonManagedReference
     @JsonBackReference
     private List<Breed> breeds;
 }

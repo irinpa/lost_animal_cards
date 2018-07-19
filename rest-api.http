@@ -38,18 +38,61 @@ Content-Type: application/json
     "age": 5,
     "gender": 1,
     "color": "Бурый 2",
-    "breed": "http://localhost:8090/breeds/2"
+    "breed": {
+        "id": 2
+    }
   },
   "address": {
     "latitude": 1,
     "longitude": 1,
     "address": "somewhere 2"
       },
-  "person": "http://localhost:8090/people/1",
+  "person": {
+   "id": 1
+  },
   "createdAt": "2012-04-23T18:25:43.511Z",
   "updatedAt": "2012-04-23T18:25:43.511Z"
 
 }
+
+
+###
+POST http://localhost:8090/cards
+Content-Type: multipart/form-data
+
+ {
+//        "id": 1,
+        "createdAt": "2018-07-19T03:54:15.783+0000",
+        "updatedAt": "2018-07-19T03:54:58.404+0000",
+        "description": "hello 123",
+        "picture": null,
+        "person": {
+            "id": 1
+//            "name": "Василий",
+//            "phone": "+7(921)5634286",
+//            "email": "vasya@ponchik.test",
+//            "animals": null
+        },
+        "animal": {
+            "alias": "Mr Cookie",
+            "age": 12,
+            "gender": "Boy",
+            "color": "Brown",
+            "breed": {
+                "id": 3
+//                "name": "Порода не известна",
+//                "species": {
+//                    "id": 1,
+//                    "name": "dog"
+//                }
+            }
+        },
+        "address": {
+            "latitude": 1,
+            "longitude": 1,
+            "address": "Pushkina st., 1"
+        }
+    }
 
 ###
 

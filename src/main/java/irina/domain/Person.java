@@ -1,5 +1,6 @@
 package irina.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,5 +36,6 @@ public class Person {
 //    private List<Animal> animals;
     @Embedded
     @JoinColumn(name = "person_id")
+    @JsonBackReference
     private List<Animal>  animals;
 }

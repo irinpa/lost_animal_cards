@@ -3,8 +3,10 @@ package irina.domain;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.rest.core.annotation.RestResource;
@@ -29,20 +31,23 @@ public class Card {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", nullable = false, updatable = false)
-    @CreatedDate
+    @CreationTimestamp
     private Date createdAt;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_at" ,nullable = false)
-    @LastModifiedDate
+    @Column(name = "updated_at" ,nullable = true)
+    @UpdateTimestamp
     private Date updatedAt;
 
     @NotNull
     @Size(max = 500)
     private String description;
 
-    @Lob
-    private byte[] picture;
+    @OneToOne(fetch = FetchType.EAGER, optional = true)
+    @JoinColumn(name = "picture_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonBackReference("picture")
+    private Picture picture;
 
 //    @ManyToOne(fetch = FetchType.LAZY, optional = false)
 //    @JoinColumn(name = "animal_id", nullable = false)
@@ -52,13 +57,13 @@ public class Card {
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "person_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonManagedReference
+    @JsonBackReference("person")
     private Person person;
 
     @RestResource(path = "comments", rel="comments")
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "card_id")
-    @JsonBackReference
+    @JsonManagedReference
     private List<Comment> comments;
 
     @Embedded

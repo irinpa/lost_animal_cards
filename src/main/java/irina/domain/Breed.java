@@ -1,5 +1,6 @@
 package irina.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -30,6 +31,6 @@ public class Breed {
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "species_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonManagedReference
+//    @JsonManagedReference
     private Species species;
 }
