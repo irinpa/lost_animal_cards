@@ -27,6 +27,6 @@ public class Picture {
 
     @NotNull
     @Size(max = 30)
-    @Column(name = "fileName")
-    private String fileName;
+    @Column(name = "pictureName")
+    private String pictureName;
 }
