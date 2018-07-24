@@ -1,7 +1,6 @@
 package irina.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,13 +10,15 @@ import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
 @Entity
-
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class Breed {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,4 +34,5 @@ public class Breed {
     @OnDelete(action = OnDeleteAction.CASCADE)
 //    @JsonManagedReference
     private Species species;
+
 }

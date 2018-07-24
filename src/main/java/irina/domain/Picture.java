@@ -1,5 +1,6 @@
 package irina.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +18,7 @@ import java.util.Date;
 @ToString
 @EqualsAndHashCode
 @Entity
+@JsonIgnoreProperties(value = { "pictureData" })
 public class Picture {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

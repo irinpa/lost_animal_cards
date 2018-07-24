@@ -1,7 +1,9 @@
 package irina.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.OnDelete;
@@ -23,6 +25,8 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 @Entity
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class Card {
 
     @Id
@@ -46,7 +50,7 @@ public class Card {
     @OneToOne(fetch = FetchType.EAGER, optional = true)
     @JoinColumn(name = "picture_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonBackReference("picture")
+//    @JsonManagedReference("picture-card")
     private Picture picture;
 
 //    @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -57,13 +61,13 @@ public class Card {
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "person_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonBackReference("person")
+//    @JsonManagedReference("person-card")
     private Person person;
 
     @RestResource(path = "comments", rel="comments")
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "card_id")
-    @JsonManagedReference
+    @JsonBackReference
     private List<Comment> comments;
 
     @Embedded

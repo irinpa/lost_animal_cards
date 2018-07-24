@@ -29,7 +29,7 @@ public class Comment {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "card_id", nullable = false)
-    @JsonBackReference
+//    @JsonManagedReference
     private Card card;
 
     @ManyToOne(fetch = FetchType.EAGER)

@@ -1,6 +1,6 @@
 package irina.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +15,9 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 @Entity
+@JsonIgnoreProperties(value = { "card" })
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+
 public class Person {
 
     @Id
@@ -38,4 +41,13 @@ public class Person {
     @JoinColumn(name = "person_id")
     @JsonBackReference
     private List<Animal>  animals;
+//
+//    //    @RestResource(path = "breeds", rel="breeds")
+
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "person_id")
+//    @JsonManagedReference
+    @JsonBackReference("person-card")
+    private List<Card> card;
 }

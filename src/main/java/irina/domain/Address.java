@@ -11,5 +11,5 @@ import javax.persistence.Embeddable;
 public class Address {
     private Long latitude;
     private Long longitude;
-    private String address;
+
 }

@@ -23,6 +23,7 @@ INSERT INTO public.breed (id, name, species_id) VALUES (22, 'Бордер-кол
 INSERT INTO public.breed (id, name, species_id) VALUES (23, 'Бультерьер', 1);
 INSERT INTO public.breed (id, name, species_id) VALUES (24, 'Вельш-корги', 1);
 INSERT INTO public.breed (id, name, species_id) VALUES (25, 'Вельш-терьер', 1);
+INSERT INTO public.breed (id, name, species_id) VALUES (29, 'Сиба-ину', 1);
 INSERT INTO public.breed (id, name, species_id) VALUES (26, 'Сиамская', 2);
 INSERT INTO public.breed (id, name, species_id) VALUES (27, 'Британская вислоухая', 2);
 INSERT INTO public.breed (id, name, species_id) VALUES (28, 'Сфинкс', 2);
