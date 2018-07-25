@@ -1,2 +1,2 @@
-INSERT INTO public.person (id, email, name, phone) VALUES (1, 'vasya@ponchik.test', 'Василий', '+7(921)5634286');
-INSERT INTO public.person (id, email, name, phone) VALUES (2, 'fyodor@golovan.test', 'Фёдор', '+7(953)2394745');
+INSERT INTO public.person (id, email, name, phone) VALUES (1, 'vasya@test.test', 'Василий', '+7(921)5634286');
+INSERT INTO public.person (id, email, name, phone) VALUES (2, 'fyodor@test.test', 'Фёдор', '+7(953)2394745');

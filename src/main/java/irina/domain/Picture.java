@@ -28,7 +28,7 @@ public class Picture {
     private byte[] pictureData;
 
     @NotNull
-    @Size(max = 30)
+    @Size(max = 100)
     @Column(name = "pictureName")
     private String pictureName;
 }

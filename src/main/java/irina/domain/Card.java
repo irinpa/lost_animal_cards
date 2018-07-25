@@ -48,7 +48,7 @@ public class Card {
     private String description;
 
     @OneToOne(fetch = FetchType.EAGER, optional = true)
-    @JoinColumn(name = "picture_id", nullable = false)
+    @JoinColumn(name = "picture_id", nullable = true)
     @OnDelete(action = OnDeleteAction.CASCADE)
 //    @JsonManagedReference("picture-card")
     private Picture picture;
