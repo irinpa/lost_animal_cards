@@ -23,11 +23,24 @@ INSERT INTO public.breed (id, name, species_id) VALUES (22, 'Бордер-кол
 INSERT INTO public.breed (id, name, species_id) VALUES (23, 'Бультерьер', 1);
 INSERT INTO public.breed (id, name, species_id) VALUES (24, 'Вельш-корги', 1);
 INSERT INTO public.breed (id, name, species_id) VALUES (25, 'Вельш-терьер', 1);
-INSERT INTO public.breed (id, name, species_id) VALUES (29, 'Сиба-ину', 1);
-INSERT INTO public.breed (id, name, species_id) VALUES (26, 'Сиамская', 2);
-INSERT INTO public.breed (id, name, species_id) VALUES (27, 'Британская вислоухая', 2);
-INSERT INTO public.breed (id, name, species_id) VALUES (28, 'Сфинкс', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (26, 'Сиба-ину', 1);
+
+INSERT INTO public.breed (id, name, species_id) VALUES (50, 'Порода не известна', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (51, 'Азиатская табби', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (52, 'Ашера', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (53, 'Бамбино', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (54, 'Бенгальская', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (55, 'Восточно-сибирская', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (56, 'Девон-рекс', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (57, 'Донской сфинкс', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (58, 'Египетская мау', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (59, 'Манчкин', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (60, 'Мейн-кун', 2);
+INSERT INTO public.breed (id, name, species_id) VALUES (61, 'Норвежская лесная', 2);
 
 
-DELETE FROM public.breed;
+
+DELETE FROM public.breed WHERE  id=51;
+DELETE FROM public.breed WHERE  id=52;
+DELETE FROM public.breed WHERE  id=53;
 
