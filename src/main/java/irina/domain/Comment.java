@@ -24,7 +24,7 @@ public class Comment {
     private Long id;
 
     @NotNull
-    @Size(max = 500)
+    @Size(max = 200)
     private String text;
 
     @ManyToOne(fetch = FetchType.EAGER)

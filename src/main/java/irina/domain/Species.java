@@ -10,6 +10,7 @@ import lombok.ToString;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Getter
@@ -23,6 +24,7 @@ public class Species {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Size(max = 30)
     @Column(name = "name")
     private String name;
 

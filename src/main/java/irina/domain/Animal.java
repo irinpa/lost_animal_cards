@@ -31,7 +31,7 @@ public class Animal {
 //    private long id;
 
     @NotNull
-    @Size(max = 30)
+    @Size(max = 20)
     @Column(name = "alias")
     private String alias;
 
@@ -41,11 +41,12 @@ public class Animal {
 
 //    @Enumerated(EnumType.ORDINAL)
     @NotNull
+    @Size(max = 15)
     @Column(name = "gender")
     private String gender;
 
     @NotNull
-    @Size(max = 50)
+    @Size(max = 30)
     @Column(name = "color")
     private String color;
 

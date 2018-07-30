@@ -8,6 +8,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Getter
@@ -24,13 +25,16 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Size(max = 30)
     @Column(name = "name")
     private String name;
 
+    @Size(max = 15)
     @Column(name = "phone")
     private String phone;
 
     @Email
+    @Size(max = 50)
     @Column(unique = true, name = "email")
     private String email;
 
